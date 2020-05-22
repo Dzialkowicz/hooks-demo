@@ -1,24 +1,27 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import Navbar from './Navbar';
+import Greeter from './Greeter';
+import Counter from './Counter';
+import MoodToggler from './MoodToggler';
+import Cart from './Cart'
 
+const items = [
+  {id: 1, name: 'Taco srako', price: 21.2, qty: 4},
+  {id: 2, name: 'Bulka', price: 111.2, qty: 1},
+  {id: 3, name: 'Ser', price: 35.54, qty: 5},
+]
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Cart initialItems={items}/>
+      <Counter step={5}/>
+      <Counter/>
+      <MoodToggler/>
+      <Navbar/>
+      <h1>Olaaa</h1>
+      <Greeter name="Karen" age="62" excitement={4} />
+      <Greeter name="Timmy" age="27" excitement={2} />
     </div>
   );
 }
